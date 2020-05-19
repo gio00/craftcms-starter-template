@@ -128,7 +128,7 @@ done
 if [[ -n "$VENDOR" ]]; then
   if [[ -n "$SSH" ]]; then
     zip -r vendor.zip vendor
-    bash deploy.sh -u vendor.zip
+    bash deploy.sh --ssh -u vendor.zip
     $SSHCONFIG $USER@$HOST "cd $RCD && unzip vendor.zip";
     rm vendor.zip
     exit 0
